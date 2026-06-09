@@ -1,0 +1,338 @@
+[
+{
+"frage": "Welche Regel ist korrekt für ein Grid mit zwei Spalten?",
+"antworten": [
+"\"header header header\"",
+"\"sidebar main\"",
+"\"main sidebar footer\"",
+"\"header main sidebar footer\"",
+"\"grid grid grid grid\""
+],
+"korrekteAntwort": 1,
+"erklaerung": "Bei zwei Spalten muss jede Zeile exakt zwei benannte Bereiche enthalten."
+},
+{
+"frage": "Was bedeutet 1fr in CSS Grid?",
+"antworten": [
+"1 Pixel",
+"1 feste Zeile",
+"Ein fester Wert wie px",
+"Ein flexibler Anteil des verfügbaren Platzes",
+"Eine Prozentangabe"
+],
+"korrekteAntwort": 3,
+"erklaerung": "fr steht für einen Anteil des verfügbaren Raums im Grid-Container und passt sich dynamisch an."
+},
+{
+"frage": "Was ist der Unterschied zwischen px und % in CSS?",
+"antworten": [
+"px ist flexibel, % ist fix",
+"px basiert auf Bildschirmgröße, % auf absolutem Wert",
+"px ist absolut, % ist relativ zum Eltern-Element",
+"Beide sind identisch",
+"px funktioniert nur im Grid"
+],
+"korrekteAntwort": 2,
+"erklaerung": "Pixel sind feste Werte, während Prozentwerte sich am Eltern-Container orientieren und dadurch skalierbar sind."
+},
+{
+"frage": "Warum ist fr in Grid oft besser als % oder px?",
+"antworten": [
+"Weil fr keine Einheiten braucht",
+"Weil fr nur für Farben gedacht ist",
+"Weil fr automatisch Restplatz verteilt und flexibel bleibt",
+"Weil px veraltet ist",
+"Weil % keine Breite setzen kann"
+],
+"korrekteAntwort": 2,
+"erklaerung": "fr verteilt den verfügbaren Raum dynamisch zwischen Spalten und reagiert besser auf unterschiedliche Bildschirmgrößen."
+},
+{
+"frage": "Das Formular soll untereinander angeordnet sein und gleichmäßig Abstand haben. Finde den Fehler:\n\n.container {\n display: flex;\n justify-content: center;\n}\n\n.field {\n margin-bottom: 15px;\n}\n\nWarum sieht das Layout trotzdem nicht korrekt aus?",
+"antworten": [
+"Flexbox funktioniert nur mit Grid",
+"Es fehlt flex-direction: column",
+"margin-bottom ist keine gültige CSS-Eigenschaft",
+"justify-content überschreibt margin automatisch",
+"form kann keine flex-Elemente enthalten"
+],
+"korrekteAntwort": 1,
+"erklaerung": "Flexbox richtet standardmäßig in einer Zeile aus. Ohne flex-direction: column bleiben Elemente horizontal statt vertikal angeordnet."
+},
+{
+"frage": "Grid soll 3 Spalten haben und Item 1 soll über 2 Spalten gehen. Was ist korrekt?",
+"antworten": [
+".container { display: grid; grid-template-columns: repeat(3, 1fr); }\n.item-1 { grid-column: span 2; }",
+".container { display: flex; }\n.item-1 { flex: 2; }",
+".container { grid: 3columns; }\n.item-1 { width: 200%; }",
+".container { display: grid; }\n.item-1 { position: absolute; }",
+".container { display: block; }\n.item-1 { grid-span: 2; }"
+],
+"korrekteAntwort": 0,
+"erklaerung": "Grid erlaubt explizite Spaltenstruktur. span 2 erweitert ein Element über zwei Grid-Spalten hinweg."
+},
+{
+"frage": "Ein Layout soll zentriert sein, aber es funktioniert nicht. Code:\n\n.container {\n display: flex;\n justify-content: center;\n}\n\nWas fehlt für vertikale Zentrierung?",
+"antworten": [
+"align-content: center",
+"flex-grow: 1",
+"flex-wrap: wrap",
+"align-items: center",
+"position: center"
+],
+"korrekteAntwort": 3,
+"erklaerung": "justify-content wirkt auf die Hauptachse. Für die Querachse wird align-items benötigt."
+},
+{
+"frage": "Warum funktioniert dieses Grid-Layout nicht korrekt?\n\n.container {\n display: grid;\n grid-template-areas:\n \"header header\"\n \"main sidebar footer\";\n}",
+"antworten": [
+"grid-template-areas ist nur für Flexbox",
+"Die Anzahl der Spalten stimmt nicht in jeder Zeile",
+"footer ist ein reserviertes Wort",
+"Grid benötigt flex-direction",
+"Es fehlt justify-content"
+],
+"korrekteAntwort": 1,
+"erklaerung": "Jede Zeile in grid-template-areas muss exakt gleich viele Spalten haben. Unterschiedliche Anzahl führt dazu, dass das gesamte Layout ignoriert wird."
+},
+{
+"frage": "Ein Formular soll sauber untereinander stehen, aber Inputs sind nebeneinander. Code:\n\n.container {\n display: flex;\n}\n\nWas ist die beste Lösung?",
+"antworten": [
+"flex-direction: column",
+"grid-template-columns: 1fr",
+"position: absolute",
+"justify-content: row",
+"display: inline-block"
+],
+"korrekteAntwort": 0,
+"erklaerung": "Flexbox ist aktiv, aber Standardrichtung ist row. column sorgt für vertikale Anordnung."
+},
+{
+"frage": "Ein Grid hat 3 Spalten: 200px 1fr 1fr. Was passiert?",
+"antworten": [
+"Alle Spalten sind gleich groß",
+"Die erste Spalte ist flexibel",
+"Die erste Spalte ist fix, die anderen teilen Restplatz",
+"Grid funktioniert nicht mit px und fr gemischt",
+"Alle Spalten werden 200px"
+],
+"korrekteAntwort": 2,
+"erklaerung": "Feste px-Werte werden zuerst reserviert, danach verteilt fr den verbleibenden Platz."
+},
+{
+"frage": "Warum wird ein Element in Flexbox nicht breiter trotz flex-grow?",
+"antworten": [
+"flex-grow funktioniert nur mit Grid",
+"display: flex fehlt oder kein freier Platz vorhanden",
+"width verhindert flex-grow grundsätzlich",
+"flex-grow funktioniert nur bei Text",
+"align-items blockiert Wachstum"
+],
+"korrekteAntwort": 1,
+"erklaerung": "Flex-grow wirkt nur im Flex-Container und nur wenn zusätzlicher Platz vorhanden ist."
+},
+{
+"frage": "Ein Layout soll 2D sein (Zeilen + Spalten gleichzeitig). Welche Lösung ist korrekt?",
+"antworten": [
+"Flexbox",
+"Inline-block",
+"Grid",
+"Float",
+"Position absolute"
+],
+"korrekteAntwort": 2,
+"erklaerung": "Grid ist speziell für zweidimensionale Layouts konzipiert, während Flexbox nur eine Richtung gleichzeitig steuert."
+},
+{
+"frage": "Welche HTML-Struktur ist semantisch korrekt für den Hauptinhalt einer Webseite?",
+"antworten": [
+"<div><div>Inhalt</div></div>",
+"<main>Inhalt</main>",
+"<span>Inhalt</span>",
+"<section><b>Inhalt</b></section>",
+"<body><p>nur Text</p></body>"
+],
+"korrekteAntwort": 1,
+"erklaerung": "Das main-Element beschreibt den zentralen Inhalt der Seite und verbessert die semantische Struktur für Browser und Screenreader."
+},
+{
+"frage": "Welche Aussage beschreibt den Unterschied zwischen div und section korrekt?",
+"antworten": [
+"div ist semantisch bedeutungsvoll, section ist nur Layout",
+"section ist für Styling, div für Navigation",
+"beide haben keine Bedeutung, aber section strukturiert Inhalte logisch",
+"div ist nur für Bilder, section nur für Text",
+"section ersetzt input-Elemente"
+],
+"korrekteAntwort": 2,
+"erklaerung": "section gruppiert inhaltlich zusammengehörige Bereiche, während div ein rein neutrales Container-Element ohne Bedeutung ist."
+},
+{
+"frage": "Warum ist ein label im Formular wichtig?",
+"antworten": [
+"Es verändert die Farbe des Inputs automatisch",
+"Es ist nur für das Layout gedacht",
+"Es ersetzt das input-Element",
+"Es verbessert Bedienbarkeit und verknüpft Text mit Eingabefeld",
+"Es ist nur für CSS notwendig"
+],
+"korrekteAntwort": 3,
+"erklaerung": "Labels verbinden sichtbaren Text mit einem Eingabefeld und erhöhen damit Usability und Barrierefreiheit."
+},
+{
+"frage": "Welche Kombination beschreibt korrekt den Unterschied zwischen input, textarea und select?",
+"antworten": [
+"input ist für lange Texte, textarea für Buttons, select für Bilder",
+"textarea ist für Passwort, input für Dropdown, select für Text",
+"input ist für kurze Eingaben, textarea für mehrzeilige Texte, select für Auswahlmenüs",
+"alle drei sind identisch",
+"select ist nur für Zahlen, input nur für Text"
+],
+"korrekteAntwort": 2,
+"erklaerung": "input ist für einzelne Werte, textarea für längere Texte und select für vorgegebene Auswahloptionen."
+},
+{
+"frage": "Welche HTML-Struktur ist semantisch am sinnvollsten für einen Seitenbereich mit Überschrift und Inhalt?",
+"antworten": [
+"<div><h1>Überschrift</h1><p>Text</p></div>",
+"<section><h2>Überschrift</h2><p>Text</p></section>",
+"<span><h1>Überschrift</h1></span>",
+"<p><h1>Überschrift</h1></p>",
+"<main><b>nur Text</b></main>"
+],
+"korrekteAntwort": 1,
+"erklaerung": "section gruppiert thematisch zusammengehörige Inhalte und ist für Inhaltsblöcke mit Struktur gedacht."
+},
+{
+"frage": "Was passiert, wenn HTML nur aus div-Elementen besteht?",
+"antworten": [
+"Die Seite lädt schneller",
+"Der Browser zeigt nichts an",
+"CSS funktioniert nicht mehr",
+"Die Struktur ist für Maschinen schwerer interpretierbar",
+"JavaScript wird deaktiviert"
+],
+"korrekteAntwort": 3,
+"erklaerung": "Ohne semantische Elemente fehlt Kontext für Suchmaschinen und Assistenzsysteme, die Inhalte interpretieren müssen."
+},
+{
+"frage": "Welche Aussage zu Labels ist korrekt, wenn for und id verwendet werden?",
+"antworten": [
+"for und id müssen identisch sein, um Funktion zu ermöglichen",
+"for ersetzt das input-Element",
+"label funktioniert nur ohne input",
+"id ist optional und for ist immer egal",
+"for und id verbinden Text mit dem Eingabefeld"
+],
+"korrekteAntwort": 4,
+"erklaerung": "Die Verbindung zwischen label und input erfolgt über matching von for und id und verbessert Bedienbarkeit und Klickverhalten."
+},
+{
+"frage": "Welche Struktur ist für ein Dropdown-Menü korrekt?",
+"antworten": [
+"<input type=\"select\">",
+"<select><option>Option</option></select>",
+"<textarea><option></option></textarea>",
+"<form><input dropdown></form>",
+"<div select=\"true\"></div>"
+],
+"korrekteAntwort": 1,
+"erklaerung": "select enthält option-Elemente und bildet ein klassisches Dropdown-Menü."
+},
+{
+"frage": "Welche Aussage beschreibt den Hauptzweck von semantischem HTML?",
+"antworten": [
+"Es verbessert die Ladegeschwindigkeit",
+"Es ersetzt CSS vollständig",
+"Es dient nur der Optik",
+"Es macht Inhalte für Maschinen und Menschen verständlicher",
+"Es verhindert JavaScript"
+],
+"korrekteAntwort": 3,
+"erklaerung": "Semantische Elemente strukturieren Inhalte sinnvoll, was Accessibility und SEO verbessert."
+},
+{
+"frage": "Welche Kombination ist korrekt für ein typisches Formularfeld?",
+"antworten": [
+"<label>Name</label><input type=\"text\">",
+"<input><label type=\"text\">Name</label>",
+"<form><option>Name</option></form>",
+"<textarea><label>Name</label></textarea>",
+"<select><input>Name</input></select>"
+],
+"korrekteAntwort": 0,
+"erklaerung": "Ein klassisches Formularfeld besteht aus Label und Input. Die Reihenfolge ist technisch flexibel, aber diese Struktur ist korrekt."
+},
+{
+"frage": "Warum sieht man bei folgendem CSS keinen Effekt?\n\n.container {\n display: flex;\n justify-content: center;\n}\n\nWas ist die wahrscheinlichste Ursache?",
+"antworten": [
+"justify-content funktioniert nur mit Grid",
+"Flexbox muss zuerst aktiviert werden",
+"Die Elemente haben keine Breite",
+"Die Elemente sind bereits zentriert durch default CSS",
+"justify-content wirkt nur vertikal"
+],
+"korrekteAntwort": 1,
+"erklaerung": "Ausrichtungseigenschaften wie justify-content wirken nur in einem aktiven Flex- oder Grid-Container. Ohne aktiviertes Layout-System passiert nichts sichtbar."
+},
+{
+"frage": "Warum hat align-content in diesem Fall keine sichtbare Wirkung?\n\n.container {\n display: flex;\n flex-wrap: nowrap;\n align-content: center;\n}\n",
+"antworten": [
+"align-content funktioniert nur ohne flex-wrap",
+"align-content wirkt nur bei mehreren Flex-Zeilen",
+"align-content ersetzt justify-content",
+"Flexbox unterstützt align-content nicht",
+"align-content braucht position: absolute"
+],
+"korrekteAntwort": 1,
+"erklaerung": "align-content wird nur sichtbar, wenn mehrere Flex-Zeilen existieren, also bei flex-wrap: wrap und zusätzlichem Platz."
+},
+{
+"frage": "Warum wirkt gap manchmal nicht in einem Flex-Layout?",
+"antworten": [
+"gap funktioniert nur mit Grid",
+"gap wirkt nur bei block-Elementen",
+"gap funktioniert nur bei absoluter Positionierung",
+"gap ist veraltet und wird ignoriert",
+"gap funktioniert nur wenn flex-direction fehlt"
+],
+"korrekteAntwort": 0,
+"erklaerung": "gap ist bei Grid und modernen Flexbox-Versionen möglich, aber in klassischen oder eingeschränkten Kontexten bzw. ohne unterstützende Umgebung wirkt es nicht wie erwartet oder wird oft mit Margin verwechselt."
+},
+{
+"frage": "Warum sieht man bei justify-content: center; keinen Effekt?",
+"antworten": [
+"Weil Flexbox nur bei column funktioniert",
+"Weil keine freie Fläche vorhanden ist",
+"Weil justify-content nur Farben ändert",
+"Weil Elemente automatisch absolut positioniert sind",
+"Weil CSS diese Eigenschaft ignoriert"
+],
+"korrekteAntwort": 1,
+"erklaerung": "justify-content verteilt freien Platz entlang der Hauptachse. Wenn kein zusätzlicher Platz vorhanden ist, gibt es keinen sichtbaren Effekt."
+},
+{
+"frage": "Warum funktioniert align-items: center manchmal scheinbar nicht?",
+"antworten": [
+"Weil align-items nur bei Grid funktioniert",
+"Weil Elemente keine Höhe haben oder Container nicht definiert ist",
+"Weil Flexbox automatisch deaktiviert wird",
+"Weil align-items nur Text betrifft",
+"Weil CSS keine vertikale Ausrichtung erlaubt"
+],
+"korrekteAntwort": 1,
+"erklaerung": "align-items richtet entlang der Querachse aus, benötigt aber definierte Containerhöhe oder Raum, um sichtbar zu wirken."
+},
+{
+"frage": "Warum hat gap keinen sichtbaren Effekt zwischen Elementen?",
+"antworten": [
+"Weil Elemente zu groß sind",
+"Weil gap nur bei Grid funktioniert",
+"Weil Elemente keinen gemeinsamen Container haben",
+"Weil CSS gap nur für Farben zuständig ist",
+"Weil Flexbox gap automatisch überschreibt"
+],
+"korrekteAntwort": 2,
+"erklaerung": "gap funktioniert nur innerhalb eines gemeinsamen Layout-Containers (Flex oder Grid). Ohne echte Containerstruktur gibt es keinen Abstand."
+}
+]
